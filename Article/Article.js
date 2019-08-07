@@ -118,13 +118,14 @@ const data = [
 const article = document.querySelector('.articles');
 
 
-articleData.forEach(data, function() {
+data.forEach(data => {
   article.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
 });
 
 
 
 function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph){
+  //creating new elements
   const article1 = document.createElement('div')
   const title1 = document.createElement('h2');
   const date1 = document.createElement('p');
@@ -133,16 +134,29 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   const thirdParagraph1 = document.createElement('p');
   const span1 = document.createElement('span');
 
-
+//setting up structure of elements
 article1.appendChild(title1);
-article.appendChild(date1);
-article.appendChild(firstParagraph1);
-article.appendChild(secondParagraph1);
-article.appendChild(thirdParagraph1);
-article.appendChild(span1);
+article1.appendChild(date1);
+article1.appendChild(firstParagraph1);
+article1.appendChild(secondParagraph1);
+article1.appendChild(thirdParagraph1);
+article1.appendChild(span1);
+
+//set class names
+article1.classList.add('article');
+date1.classList.add('date');
+span1.classList.add('expandButton');
+
+//set the text content
+title1.textContent = title;
+date1.textContent = date;
+firstParagraph1.textContent = firstParagraph;
+secondParagraph1.textContent = secondParagraph;
+thirdParagraph1.textContent = thirdParagraph;
+span1.textContent = "click here for an article";
 
 
-return createArticle;
+return article1;
 }
 
 
