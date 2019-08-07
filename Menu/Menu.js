@@ -9,6 +9,17 @@ let menuItems = [
   'Log Out'
 ];
 
+const menu = document.querySelector('.menu-btn');
+
+function createMenu(cb){
+
+const menubox = document.createElement('div');
+const UL = document.createElement('ul');
+
+menu.addEventListener('click', function(){
+  menubox.classList.toggle('.menu-open');
+})
+}
 /* 
 
   Step 1: Write a function that will create a menu component as seen below:
@@ -23,6 +34,7 @@ let menuItems = [
 
   Step 2: Iterate over the array creating a list item <li> element for each item in the array. 
   Add those items to the <ul>
+
 
   Step 3: Using a DOM selector, select the menu button currently on the DOM.
   
