@@ -30,6 +30,12 @@ menu.addEventListener('click', function(){
     </ul>
   </div>
 
+  createElement for div and ul
+
+  then create iterator function (forEach) and do createElement for menuItems (li)
+
+
+
   Pass the function an array as it's only argument.
 
   Step 2: Iterate over the array creating a list item <li> element for each item in the array. 
