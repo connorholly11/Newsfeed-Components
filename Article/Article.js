@@ -102,13 +102,49 @@ const data = [
   Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each peice of the data object above.
+  */
 
-  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
-  Step 3: return the entire component.
+//   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
-*/
+//   Step 3: return the entire component.
+
+//   Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+
+//   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
+
+const article = document.querySelector('.articles');
+
+
+articleData.forEach(data, function() {
+  article.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+});
+
+
+
+function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph){
+  const article1 = document.createElement('div')
+  const title1 = document.createElement('h2');
+  const date1 = document.createElement('p');
+  const firstParagraph1 = document.createElement('p');
+  const secondParagraph1 = document.createElement('p');
+  const thirdParagraph1 = document.createElement('p');
+  const span1 = document.createElement('span');
+
+
+article1.appendChild(title1);
+article.appendChild(date1);
+article.appendChild(firstParagraph1);
+article.appendChild(secondParagraph1);
+article.appendChild(thirdParagraph1);
+article.appendChild(span1);
+
+
+return createArticle;
+}
+
+
+
+
