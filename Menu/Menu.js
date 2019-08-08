@@ -9,26 +9,28 @@ let menuItems = [
   'Log Out'
 ];
 
-window.addEventListener('load', (e) => {
+// window.addEventListener('load', (e) => {
   
 
-const menu = document.querySelector('.menu-button');
-const header = document.querySelector('header');
+// const menuButton = document.querySelector('.menu-button');
+const header = document.querySelector('.header');
+const menuButton = document.querySelector('.menu-button');
 
-function createMenu(arrayItem){
+function createMenu(){
   const menu1 = document.createElement('div');
   const UL1 = document.createElement('ul')
+  
 
 
 menuItems.forEach(menuItems => {
-  const LI = document.createElement('li')
-  const UL = document.createElement('ul')
+  const LI = document.createElement('li');
+  LI.textContent = menuItems;
   UL1.appendChild(LI);
 });
 
-menu.appendChild(UL1);
+menu1.appendChild(UL1);
 
-menu.classList.add('menu');
+menu1.classList.add('menu');
 
 
 // function createMenu(cb){
@@ -36,15 +38,16 @@ menu.classList.add('menu');
 // const menubox = document.createElement('div');
 // const UL = document.createElement('ul');
 
-menu.addEventListener('click', function(){
-  menubox.classList.toggle('.menu-open');
+menuButton.addEventListener('click', function(){
+  console.log("Click");
+  menu1.classList.toggle('menu--open');
 })
-return menu;
+return menu1;
 }
 
-header.appendChild(createMenu(menuItems))
+header.appendChild(createMenu());
 
-});
+// })
 
 /* 
 

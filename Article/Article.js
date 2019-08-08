@@ -161,6 +161,10 @@ article1.classList.add('article');
 date1.classList.add('date');
 span1.classList.add('expandButton');
 
+span1.addEventListener('click', () => {
+  article1.classList.toggle('article-open')
+})
+
 //set the text content
 title1.textContent = title;
 date1.textContent = date;
