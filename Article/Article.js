@@ -85,6 +85,22 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Professional Software Development in 2019',
+    date: 'Jan 1st, 2019',
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
 
@@ -102,13 +118,65 @@ const data = [
   Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each peice of the data object above.
+  */
 
-  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
-  Step 3: return the entire component.
+//   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+//   Step 3: return the entire component.
 
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
+//   Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 
-*/
+//   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
+
+const article = document.querySelector('.articles');
+
+
+data.forEach(data => {
+  article.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+});
+
+
+
+function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph){
+  //creating new elements
+  const article1 = document.createElement('div')
+  const title1 = document.createElement('h2');
+  const date1 = document.createElement('p');
+  const firstParagraph1 = document.createElement('p');
+  const secondParagraph1 = document.createElement('p');
+  const thirdParagraph1 = document.createElement('p');
+  const span1 = document.createElement('span');
+
+//setting up structure of elements
+article1.appendChild(title1);
+article1.appendChild(date1);
+article1.appendChild(firstParagraph1);
+article1.appendChild(secondParagraph1);
+article1.appendChild(thirdParagraph1);
+article1.appendChild(span1);
+
+//set class names
+article1.classList.add('article');
+date1.classList.add('date');
+span1.classList.add('expandButton');
+
+span1.addEventListener('click', () => {
+  article1.classList.toggle('article-open')
+})
+
+//set the text content
+title1.textContent = title;
+date1.textContent = date;
+firstParagraph1.textContent = firstParagraph;
+secondParagraph1.textContent = secondParagraph;
+thirdParagraph1.textContent = thirdParagraph;
+span1.textContent = "click here for an article";
+
+
+return article1;
+}
+
+
+
+
